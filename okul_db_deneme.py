@@ -28,7 +28,7 @@ class Personel(Okul):
         self.per_adres = per_adres
         self.per_tel = per_tel
         self.per_brans = per_brans
-
+ 
 
 class Otomasyon:
     def __init__(self):
@@ -150,13 +150,48 @@ def menu(secim):
             print("Hatalı seçim yaptınız...")
     return True
 
-
 while True:
-    print("\nÖğrenci Otomasyonu")
-    print("1. Öğrenci Ekle")
-    print("2. Öğrenci Sil")
-    print("3. Öğrencileri Listele")
-    print("0. Çıkış")
-    secim = input("Seçiminizi yapınız: ")
-    if not menu(secim):
+    print("""A = Öğrenci Otomasyonu
+B = Personel Otomasyonu
+C = Branş Otomasyonu
+0 = Çıkış""")
+    
+    secim = input("Bir seçenek giriniz: ")
+    
+    if secim == "0":
+        print("Programdan çıkılıyor...")
         break
+
+    if secim == "A":
+        print("\nÖğrenci Otomasyonu")
+        print("1. Öğrenci Ekle")
+        print("2. Öğrenci Sil")
+        print("3. Öğrencileri Listele")
+        print("0. Çıkış")
+        alt_secim = input("Seçiminizi yapınız: ")
+        if not menu(alt_secim):
+            break
+    
+    elif secim == "B":
+        print("\nPersonel Otomasyonu")
+        print("1. Personel Ekle")
+        print("2. Personel Sil")
+        print("3. Personel Listele")
+        print("0. Çıkış")
+        alt_secim = input("Seçiminizi yapınız: ")
+        if not menu(alt_secim):
+            break
+
+    elif secim == "C":
+        print("\nBranş Otomasyonu")
+        print("1. Branş Ekle")
+        print("2. Branş Sil")
+        print("3. Branş Listele")
+        print("0. Çıkış")
+        alt_secim = input("Seçiminizi yapınız: ")
+        if not menu(alt_secim):
+            break
+    
+    else:
+        print("Geçersiz seçim. Lütfen tekrar deneyin.")
+    
